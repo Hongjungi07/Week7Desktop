@@ -18,11 +18,18 @@ public class Enemy : MonoBehaviour
     private int wayPointCount;
     private int currentIndex = 0;
     private EnemySpawner enemySpawner;
+    private float baseTimeOffset;
 
     public Transform HUDPoint => hudPoint;
+    public float TimeOffset
+    {
+        get => timeOffset;
+        set => timeOffset = Mathf.Min(value, 5.0f);
+    }
 
     public void Setup(EnemySpawner enemySpawner, Transform[] wayPoints)
     {
+        baseTimeOffset = timeOffset;
         this.enemySpawner = enemySpawner;
 
         wayPointCount = wayPoints.Length;
@@ -68,6 +75,11 @@ public class Enemy : MonoBehaviour
 
             yield return null;
         }
+    }
+
+    public void ResetTimeOffset()
+    {
+        timeOffset = baseTimeOffset;
     }
 
     public void OnDie(EnemyDestroyType type)
