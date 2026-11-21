@@ -80,7 +80,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TowerWeapon
   towerTemplate: {fileID: 11400000, guid: 60cc1967a6c0e314a9c262795f1a3b24, type: 2}
   spawnPoint: {fileID: 4768153087991156123}
+  weaponType: 0
   projectilePrefab: {fileID: 4613178186377759056, guid: 5c4e1b08f2426d34ea6bd7a7f79d0515, type: 3}
+  lineRenderer: {fileID: 0}
+  hitEffect: {fileID: 0}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!65 &-367548520355650124
 BoxCollider:
   m_ObjectHideFlags: 0
